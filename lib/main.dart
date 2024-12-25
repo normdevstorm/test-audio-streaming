@@ -217,7 +217,7 @@ class AudioStreamingService {
   void _sendAudioData(Uint8List audioData) async {
     try {
       _tcpSocket?.add(audioData);
-      print('Sent ${audioData.toString()} bytes via TCP');
+      print('Sent ${audioData.buffer.asUint16List()} bytes via TCP');
     } catch (e) {
       print('Send Audio Data Error: $e');
     }
